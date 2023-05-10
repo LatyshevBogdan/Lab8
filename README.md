@@ -9,8 +9,9 @@ ENV SERVER_URL http://google.com
 
 ENTRYPOINT bash -c "while true ; do sleep 5 && curl -qq $SERVER_URL; done" 
 ```
+==========================================================
 nano Dockerfile-server
-
+```
 FROM ubuntu:22.10
 
 RUN apt update && apt install npm --no-install-recommends -y && \
