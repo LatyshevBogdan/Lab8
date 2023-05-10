@@ -1,7 +1,6 @@
 ## Lab8
-```
 nano Dockerfile-client
-
+```
 FROM ubuntu:22.10
 
 RUN apt update && apt install curl --no-install-recommends -y
@@ -27,10 +26,11 @@ COPY db.json /opt/server/db.json
 
 EXPOSE 3000
 
-ENTRYPOINT ["npm", "start"]
+POINT ["npm", "start"]
 ```
+===========================================================
 nano db.json
-
+```
 {
   "users": [
     {
@@ -46,7 +46,9 @@ nano db.json
    ]
 }
 ```
+========================================================
 nano package.json
+```
 
 {
   "name": "server",
@@ -67,8 +69,9 @@ nano package.json
   }
 }
 ```
+=====================================================
 nano docker-compose.yml
-
+```
 version: '3.9'
 
 services:
@@ -93,6 +96,7 @@ networks:
       config:
         - subnet: 172.20.0.0/16
 ```
+====================================================
 Билд и запуск:
 ```
 docker build -f Dockerfile-server -t lab8:server .
